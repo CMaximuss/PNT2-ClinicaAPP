@@ -119,3 +119,122 @@ export default {
     </div>
 
 </template>
+
+<style scoped>
+
+    .turnos_button {
+        background-color: #4a8357;
+    }
+
+    .home_button {
+        background-color: #2c7fa8;
+    }
+
+    .row button {
+        margin-left: 10px;
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+        font-weight: bold;
+        color: white;
+    }
+
+    .title {
+        color: black;
+    }
+
+    .row button:hover {
+        cursor: pointer;
+    }
+
+    .row {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    select {
+        padding: 10px 5px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    label {
+        color: white;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        color: white;
+        font-size: 30px;
+    }
+
+    .reservarBoton {
+        margin-top: 20px;
+        padding: 20px 50px;
+        border-radius: 25px;
+        background-color: rgb(55, 54, 54) ;
+        border: none;
+        color: white;
+        font-size: 25px;
+        font-weight: bold;
+        box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.9);
+    }
+
+    .reservarBoton:hover {
+        cursor: pointer;
+    }
+
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://images.stockcake.com/public/7/e/b/7eb8f1e8-35a0-4ef1-a2bf-4f3d01119ec9_large/dental-clinic-interior-stockcake.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+        height: calc(100vh - 150px);
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-container {
+        background-color: #fff;
+        padding: 20px;
+    }
+
+    .modal-content {
+        text-align: center;
+    }
+
+
+</style>
