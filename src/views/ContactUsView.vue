@@ -56,3 +56,34 @@ export default {
   flex-direction: row;
   justify-content: space-between;
 }
+
+.left {
+  align-items: flex-start;
+  margin-left: 80px;
+  
+}
+
+.right {
+  margin-right: 130px;
+  align-items: flex-end;
+
+  
+}
+
+.title-contact {
+  font-size: 35px;
+  color: rgb(5, 5, 5);
+  font-style: bold;
+  margin-top: 10px;
+}
+
+ol {
+  font-size: 18px;
+  padding-left: 10px;
+  color: rgb(8, 8, 8);
+}
+
+ol li {
+  margin-top: 5px;
+}
+</style>
