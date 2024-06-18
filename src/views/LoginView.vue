@@ -5,7 +5,7 @@
       <div class="izquierda"></div>
       <div class="derecha">
   
-          <h1 class="neon">Dr Strange</h1>
+          <span class="btn">Dr Strange</span>
           <div class="formulario center">
               
               <form @submit.prevent="loguear" class="center" >
@@ -73,7 +73,7 @@ export default {
     .containerLogin{
         height: 100vh;
         width: 100vw;
-        background-color: blue;
+        background-color: rgb(61, 61, 61);
         display: flex;
     }
 
@@ -103,7 +103,7 @@ export default {
         width: 50%;
         background-color: rgb(222, 219, 219);
         border-radius: 20px;
-        box-shadow: 3px 3px 10px 2px #bb3034;
+        box-shadow: 3px 3px 10px 2px #030303;
        
     }
     
@@ -143,44 +143,54 @@ export default {
         width: 100%;
     }
 
-
-
-
-
- h1 {
-  font-size: 5rem;
-  font-weight: 200;
-  font-style: italic;
-  color: #fff;
-  padding: 1rem 1rem 1rem 1rem;
-  border: 0.4rem solid #fff;
-  border-radius: 2rem;
-  text-transform: uppercase;
-  animation: flicker 1.5s infinite alternate;     
-  --neon-text-color: #ff0008;
-  --neon-border-color: #ff0008;
-  font-family: 'Tilt Neon', cursive;
+    .btn{
+  cursor:pointer;
+	position:relative;
+	padding:10px 20px;
+	background:white;
+	font-size:28px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	transition:all 1s;
+	&:after,&:before{
+		content:" ";
+		width:10px;
+		height:10px;
+		position:absolute;
+		border :0px solid #fff;
+		transition:all 1s;
+		}
+	&:after{
+		top:-1px;
+		left:-1px;
+		border-top:5px solid black;
+		border-left:5px solid black;
+	}
+	&:before{
+		bottom:-1px;
+		right:-1px;
+		border-bottom:5px solid black;
+		border-right:5px solid black;
+	}
+	&:hover{
+		border-top-right-radius:0px;
+	  border-bottom-left-radius:0px;
+		background:rgba(0,0,0,.5);
+	  color:white;
+		&:before,&:after{
+			
+			width:100%;
+			height:100%;
+		  border-color:white;
+		}
+	}
 }
 
 input:focus {
     outline: none !important;
-    border:1px solid red;
-    box-shadow: 0 0 10px #ff0008;
+    border:1px solid rgb(3, 3, 3);
+    box-shadow: 0 0 10px #000000;
   }
-
-h1::-moz-selection {
-  background-color: var(--neon-border-color);
-  color: var(--neon-text-color);
-}
-
-h1::selection {
-  background-color: var(--neon-border-color);
-  color: var(--neon-text-color);
-}
-
-h1:focus {
-  outline: none;
-}
 
 @keyframes flicker {
     

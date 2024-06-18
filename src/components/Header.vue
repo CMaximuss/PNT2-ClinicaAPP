@@ -30,7 +30,7 @@ export default{
 
 <template>
     <header>
-        <h1 class="neon">Clinica Dr Strange</h1>
+        <span class="btn">Dr Strange</span>
 
         <div id="sidemenu">
             <button class="sidemenu__btn" v-on:click="navOpen = !navOpen" v-bind:class="{ active: navOpen }">
@@ -71,77 +71,54 @@ header {
     z-index: 1000;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 200;
-    font-style: italic;
-    padding: 0px 20px;
-    margin: 0;
-    color: #fff;
-    border: 0.4rem solid #fff;
-    border-radius: 2rem;
-    text-transform: uppercase;
-    animation: flicker 1.5s infinite alternate;
-    --neon-text-color: #ff0008;
-    --neon-border-color: #ff0008;
-    font-family: 'Tilt Neon', cursive;
-}
 
 ul li {
     cursor: pointer;
 }
 
-h1::-moz-selection {
-    background-color: var(--neon-border-color);
-    color: var(--neon-text-color);
+.btn{
+cursor:pointer;
+	position:relative;
+	padding:10px 20px;
+	background:white;
+	font-size:28px;
+	border-top-right-radius:10px;
+	border-bottom-left-radius:10px;
+	transition:all 1s;
+	&:after,&:before{
+		content:" ";
+		width:10px;
+		height:10px;
+		position:absolute;
+		border :0px solid #fff;
+		transition:all 1s;
+		}
+	&:after{
+		top:-1px;
+		left:-1px;
+		border-top:5px solid black;
+		border-left:5px solid black;
+	}
+	&:before{
+		bottom:-1px;
+		right:-1px;
+		border-bottom:5px solid black;
+		border-right:5px solid black;
+	}
+	&:hover{
+		border-top-right-radius:0px;
+	border-bottom-left-radius:0px;
+		 background:rgba(0,0,0,.5);
+		 color:white;
+		&:before,&:after{
+			
+			width:100%;
+			height:100%;
+			 border-color:white;
+		}
+	}
 }
 
-h1::selection {
-    background-color: var(--neon-border-color);
-    color: var(--neon-text-color);
-}
-
-h1:focus {
-    outline: none;
-}
-
-/* Animate neon flicker */
-@keyframes flicker {
-
-    0%,
-    19%,
-    21%,
-    23%,
-    25%,
-    54%,
-    56%,
-    100% {
-
-        text-shadow:
-            -0.2rem -0.2rem 1rem #fff,
-            0.2rem 0.2rem 1rem #fff,
-            0 0 2rem var(--neon-text-color),
-            0 0 4rem var(--neon-text-color),
-            0 0 6rem var(--neon-text-color),
-            0 0 8rem var(--neon-text-color),
-            0 0 10rem var(--neon-text-color);
-
-        box-shadow:
-            0 0 .5rem #fff,
-            inset 0 0 .5rem #fff,
-            0 0 2rem var(--neon-border-color),
-            inset 0 0 2rem var(--neon-border-color),
-            0 0 4rem var(--neon-border-color),
-            inset 0 0 4rem var(--neon-border-color);
-    }
-
-    20%,
-    24%,
-    55% {
-        text-shadow: none;
-        box-shadow: none;
-    }
-}
 
 #sidemenu nav {
     width: 200px;
